@@ -37,9 +37,7 @@ const config = {
       title: 'Softa 2025',
       items: [
         { type: 'docSidebar', sidebarId: 'globalSidebar', label: 'Guides', position: 'left' },
-        { type: 'docSidebar', sidebarId: 'smallProjectsSidebar', label: 'Small Projects', position: 'left' },
-        { type: 'docSidebar', sidebarId: 'saasProjectsSidebar', label: 'SaaS Projects', position: 'left' },
-        { type: 'docSidebar', sidebarId: 'enterpriseProjectsSidebar', label: 'Enterprise Projects', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'projectsSidebar', label: 'Projects', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         { href: 'https://github.com/softa/softa-2025', label: 'GitHub', position: 'right' },
       ],
@@ -58,9 +56,8 @@ const config = {
         {
           title: 'Projects',
           items: [
-            { label: 'Small', to: '/docs/projects/small' },
-            { label: 'SaaS', to: '/docs/projects/saas' },
-            { label: 'Enterprise', to: '/docs/projects/enterprise' },
+            { label: 'Overview', to: '/docs/projects/projects-overview' },
+            { label: 'Consensus', to: '/docs/projects/projects-consensus' },
           ],
         },
       ],
