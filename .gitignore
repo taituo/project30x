@@ -1,5 +1,5 @@
 node_modules/
-docs-website/node_modules/
-docs-website/build/
-docs-website/.docusaurus/
+docs/node_modules/
+docs/build/
+docs/.docusaurus/
 *.log

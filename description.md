@@ -18,7 +18,7 @@ Project30x targets multiple deployment contexts:
 Every project progresses through three phases (MVP, polish, stretch) with quality gates covering testing, security, and observability. Shared CI/CD workflows, feature templates, and compliance pipelines keep delivery consistent across teams.
 
 ## Knowledge Base
-The Docusaurus site in `docs-website/` houses the golden path guides, platform references, project consensus dossier, and research entries. Source directories under `apps/` and project documentation remain linked via frontmatter metadata for tight code-to-docs coupling.
+The Docusaurus site in `docs/` houses the golden path guides, platform references, project consensus dossier, and research entries. Each application now owns its specification within `apps/<project>/docs/`, and the site ingests them via a secondary docs plugin so code and documentation stay side by side.
 
 ## Next Steps
 1. Prioritise the highest-impact blueprints from the consensus specification.

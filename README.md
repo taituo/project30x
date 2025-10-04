@@ -10,9 +10,8 @@ Project30x is the unifying documentation and specification workspace for the Pro
 - **Shared governance** ensuring consistent security, CI/CD, research, and operating models for every team.
 
 ## Repository Layout
-- `docs-website/` – Docusaurus site containing program guides, platform standards, project overviews, and the consolidated `projects-consensus` dossier.
-- `apps/` – Reserved directories for each project’s future implementation footprint.
-- `help/projects/` – Original in-depth project specs preserved alongside the published consensus view.
+- `docs/` – Docusaurus site containing program guides, platform standards, project overviews, the consolidated `projects-consensus` dossier, and build tooling.
+- `apps/` – Per-project directories that now embed their specifications under `docs/` alongside future implementation code.
 - `questions.md` – Open questions and next-step prompts captured during discovery.
 
 ## How We Deliver
@@ -22,14 +21,15 @@ Project30x is the unifying documentation and specification workspace for the Pro
 4. **Observability-first mindset** – Monitoring, alerting, and quality gates are defined up front and embedded in every delivery phase.
 
 ## Navigating the Knowledge Base
-- Start with `docs-website/docs/golden-path/intro.md` for the program charter and operating principles.
-- Review `docs-website/docs/projects/overview.md` for a lightweight catalogue of all initiatives.
-- Dive into `docs-website/docs/projects/consensus.md` to see every project’s consolidated objectives, architecture, risks, and delivery plan.
-- Consult `docs-website/docs/platform/overview.md` and `docs-website/docs/architecture/adr/adr-process.md` for reusable platform capabilities and decision workflows.
+- Start with `docs/docs/golden-path/intro.md` for the program charter and operating principles.
+- Review `docs/docs/projects/overview.md` for a lightweight catalogue of all initiatives.
+- Dive into `docs/docs/projects/consensus.md` to see every project’s consolidated objectives, architecture, risks, and delivery plan.
+- Explore any application’s page via the Projects sidebar (sourced from `apps/<project>/docs/`).
+- Consult `docs/docs/platform/overview.md` and `docs/docs/architecture/adr/adr-process.md` for reusable platform capabilities and decision workflows.
 
 ## Getting Ready for Delivery
-1. Clone the repository and install Node dependencies under `docs-website/` to run the Docusaurus site locally.
-2. Use the consensus specs to select priority projects, then branch into the matching directory under `apps/` for implementation work.
+1. Clone the repository and install Node dependencies under `docs/` to run the Docusaurus site locally.
+2. Use the consensus specs to select priority projects, then branch into the matching directory under `apps/` for implementation work with the embedded docs as your guide.
 3. Capture new insights as ADRs or research notes, keeping the knowledge hub authoritative and current.
 
 ## Call to Action

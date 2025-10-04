@@ -32,20 +32,24 @@ This section details the site structure—where each type of content belongs and
 
 ### 2.1 Docusaurus Directory Layout – A Scalable Baseline
 
-We intentionally place the Docusaurus implementation at `docs-website/` in the monorepo root. The structure separates documentation from application code while keeping them tightly linked.
+We intentionally place the Docusaurus implementation at `docs/` in the monorepo root. The structure keeps global guidance under the Docusaurus site while allowing every application to co-locate its own documentation.
 
 ```
 project30x/
-├── apps/                    # Placeholder implementation directories for all 30 projects
-├── docs-website/
+├── apps/
+│   ├── <project>/
+│   │   └── docs/
+│   │       └── index.md     # Project-level specification beside implementation code
+│   └── ...
+├── docs/
 │   ├── docusaurus.config.js
+│   ├── apps.sidebars.js
 │   ├── sidebars.js
 │   ├── docs/
 │   │   ├── golden-path/
 │   │   ├── projects/
 │   │   │   ├── overview.md
-│   │   │   ├── consensus.md
-│   │   │   └── <project-slug>/index.md
+│   │   │   └── consensus.md
 │   │   ├── platform/
 │   │   ├── architecture/
 │   │   │   └── adr/
@@ -57,7 +61,7 @@ project30x/
 └── README.md                # Repository overview
 ```
 
-Project-specific docs sit directly under `docs/projects/<slug>/`, keeping them in sync with `apps/<slug>/` through front-matter metadata (`source_dir`) or optional symlinks.
+Project-specific docs live under `apps/<slug>/docs/`. A secondary docs plugin loads them into the site so that navigation and search behave exactly as if they lived under `docs/projects/<slug>/`, while the authoritative Markdown stays next to the code.
 
 ### 2.2 Docs vs Blog – A Deliberate Separation
 
@@ -86,7 +90,7 @@ We operationalize the strategy through a simple placement matrix:
 | Section        | Directory              | Content Type                     | Primary Audience           | Cadence           | Plugin | Rationale |
 | -------------- | ---------------------- | -------------------------------- | -------------------------- | ----------------- | ------ | --------- |
 | Golden Path    | `docs/golden-path/`    | Standards, best practices        | All engineers              | Infrequent        | docs   | Canonical operating model |
-| Projects       | `docs/projects/`       | Project guides, APIs, runbooks   | Project teams              | As needed         | docs   | Single source of truth per project |
+| Projects       | `apps/<project>/docs/` | Project guides, APIs, runbooks   | Project teams              | As needed         | apps   | Specifications co-located with implementation |
 | Platform       | `docs/platform/`       | CI/CD, infrastructure, security  | Engineering & Ops          | Periodic          | docs   | Shared platform references |
 | Architecture   | `docs/architecture/`   | ADRs, architecture deep dives    | Architects, senior ICs     | Upon decision     | docs   | Immutable decision history |
 | Research       | `docs/research/`       | Experiments, LLM studies         | R&D, technical leadership  | Experiment-driven | docs   | Repeatable scientific records |
@@ -103,7 +107,7 @@ We optimize navigation so the volume of information remains approachable.
 A single global sidebar would be unwieldy. Instead we rely on:
 
 - **`globalSidebar`** for program-wide guides (Golden Path, Platform, Architecture, Research).
-- **`projectsSidebar`** generated from `docs/projects/<slug>/` to provide project-specific navigation coupled with the corresponding source directories.
+- **`projectsSidebar`** served by the secondary docs plugin, auto-generating from `apps/<slug>/docs/` while keeping navigation aligned with the co-located source directories.
 
 ### 3.2 Primary Navigation Bar
 
@@ -150,7 +154,7 @@ Every documentation change follows the same rigor as code changes:
 We assign clear responsibilities:
 
 - **Program core team** curates the Golden Path and platform documentation.
-- **Project maintainers** keep their `docs/projects/<slug>/` entries accurate and aligned with `apps/<slug>/`.
+- **Project maintainers** keep their `apps/<slug>/docs/` entries accurate and aligned with implementation changes.
 - **Architecture guild** stewards the ADR process.
 - **Research guild** maintains experiments and publishes validated findings.
 
