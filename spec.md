@@ -1,51 +1,43 @@
-[O[IStrateginen Suunnitelma: "Project30x" Monorepon Yhtenäinen Tietämyskeskus
-Osa I: Arkkitehtuurin Perusta: Yhtenäinen Tietämyskeskus
-Tämä perustavanlaatuinen osio määrittelee Docusaurus-sivuston ei ainoastaan dokumentaatiotyökaluna, vaan strategisena voimavarana tiedonhallintaan ja kehittäjäkokemuksen parantamiseen monimutkaisessa monorepo-ympäristössä.
+Strategic Plan: Project30x Unified Knowledge Hub
 
-1.1 Monorepon Haaste: Monimutkaisuuden Hallinta Skaalassa
+Part I: Architectural Foundation – Building a Unified Knowledge Hub
+This foundational section frames the Docusaurus site not merely as a documentation tool, but as a strategic asset for knowledge management and developer experience within a complex monorepo.
 
-Nykyaikainen ohjelmistokehitys, erityisesti laajamittaisissa ympäristöissä, kohtaa merkittäviä haasteita. "Project30x" -hankkeen konteksti – noin 30 projektia, jotka kattavat pieniä työkaluja, SaaS-alustoja ja enterprise-tason järjestelmiä ja jotka on toteutettu eri teknologiapinoilla yhdessä monorepossa – on tästä erinomainen esimerkki. Tällainen ympäristö, vaikka se tarjoaa etuja koodin jakamisessa ja yhtenäisissä työkaluissa, synnyttää väistämättä haasteita, jotka voivat hidastaa kehitystä ja heikentää laatua ilman systemaattista lähestymistapaa.
+### 1.1 The Monorepo Challenge: Controlling Complexity at Scale
 
-Keskeisimpiä haasteita ovat:
+Modern software delivery—especially in large, multi-team environments—faces serious hurdles. Project30x operates roughly 30 initiatives spanning lightweight utilities, SaaS products, and enterprise platforms, all maintained inside a single monorepo with diverse technology stacks. While the approach unlocks code sharing and common tooling, it also introduces friction that must be addressed deliberately.
 
-Tietosiilot: Eri projektitiimien välille syntyy helposti tietokuiluja, jolloin parhaita käytäntöjä ja opittuja asioita ei jaeta tehokkaasti.
+Key pain points include:
 
-Epäjohdonmukaiset Standardit: Ilman keskitettyä ohjeistusta projektit alkavat noudattaa omia, toisistaan poikkeavia koodaus- ja arkkitehtuuristandardejaan, mikä vaikeuttaa ylläpitoa ja tiimien välistä yhteistyötä.
+- **Information silos:** Without guardrails, knowledge remains trapped inside individual project teams and best practices fail to propagate.
+- **Inconsistent standards:** Each project drifts toward its own interpretation of architecture, testing, and coding guidelines, increasing maintenance cost and hindering cross-team collaboration.
+- **High cognitive load:** New contributors expend significant effort mapping the repository, uncovering the right context, and reconciling conflicting documents.
+- **Documentation drift:** Artifacts stored outside the codebase seldom keep up with rapid change, eroding trust until teams stop relying on them altogether.
 
-Korkea Kognitiivinen Kuorma: Uusien kehittäjien perehdyttäminen on hidasta ja tehotonta, kun heidän on navigoitava kymmenien projektien ja niiden epävirallisten dokumentaatioiden viidakossa.
+Documentation quality is therefore not a cosmetic issue; it directly affects perceived product quality and the speed at which teams can execute. Establishing a single, well-designed, and actively maintained knowledge hub is the most effective way to keep productivity high as the monorepo evolves.
 
-Dokumentaation Vanheneminen: Perinteiset dokumentaatiojärjestelmät, jotka sijaitsevat koodin ulkopuolella, eivät pysy monorepon nopeiden muutosten tahdissa. Tämä johtaa siihen, että dokumentaatio vanhenee, menettää luotettavuutensa ja lopulta hylätään.
+### 1.2 Docusaurus as a Strategic Platform
 
-On olennaista ymmärtää, että dokumentaation laatu ei ole pelkästään tekninen yksityiskohta; se vaikuttaa suoraan tuotteen laatumielikuvaan ja sen omaksumisen helppouteen. Ilman keskitettyä, hyvin suunniteltua ja ylläpidettyä tietämyskeskusta kehittäjien tuottavuus heikkenee väistämättä monorepon kasvaessa. Tämä suunnitelma esittää arkkitehtuurin, joka vastaa näihin haasteisiin ja muuttaa dokumentaation strategiseksi voimavaraksi.   
+Choosing Docusaurus as the foundation of the knowledge hub is an intentional decision. We treat it as a Jamstack-based knowledge platform rather than a static site generator.
 
-1.2 Docusaurus Strategisena Valintana: Enemmän Kuin Staattinen Sivugeneraattori
+- **Docs-as-code mindset:** Documentation lives in the same repository, is versioned with Git, reviewed through pull requests, and deployed via the same CI/CD pipelines as application code. This embeds documentation tasks into the definition of done and hardens the culture around up-to-date references.
+- **MDX for rich content:** MDX allows us to embed React components directly inside Markdown. We can enrich the docs with diagrams, live code samples, architecture visualizations, and dashboards that pull real metrics—raising comprehension and engagement.
+- **Extensible architecture:** Starting from the `classic` preset provides docs and blog out of the box, yet the plugin system keeps the door open for custom extensions, search providers, or analytics integrations.
+- **Versioning and localization:** Built-in support for versioned docs and internationalization gives us a forward path for customers running varied releases or different languages without rebuilding the hierarchy.
 
-Docusaurus-alustan valinta "Project30x" -hankkeen perustaksi ei ole sattumaa. Se on strateginen päätös, joka perustuu sen kykyyn toimia modernina Jamstack-tietämyskeskuksena, ei pelkästään staattisten sivujen generaattorina. Docusaurus tarjoaa joukon ominaisuuksia, jotka vastaavat suoraan monorepo-ympäristön asettamiin vaatimuksiin.   
+Taken together, the platform turns static documents into an operational asset that reinforces quality, clarity, and a consistent engineering culture.
 
-"Docs-as-Code" -filosofia: Tämä on koko arkkitehtuurin kulmakivi. Dokumentaatiota käsitellään kuten mitä tahansa muuta koodia: se sijaitsee samassa monorepossa, sitä versioidaan Gitillä, se tarkistetaan osana pull request -prosessia ja se julkaistaan automaattisesti samojen CI/CD-putkien kautta. Tämä kehittäjäkeskeinen lähestymistapa sitouttaa kehittäjät dokumentaation ylläpitoon ja varmistaa, että se pysyy ajan tasalla koodimuutosten kanssa. Tämä ei ole pelkästään tekninen valinta, vaan se on kulttuurinen muutos, joka integroi dokumentoinnin osaksi ydin-kehitysprosessia. Kun dokumentaation päivittäminen on osa "definition of done" -määritelmää, se ei jää enää jälkikäteen tehtäväksi velvollisuudeksi.   
+Part II: Information Architecture and Content Strategy
+This section details the site structure—where each type of content belongs and why. Disciplined information architecture keeps the growing body of knowledge discoverable and maintainable.
 
-MDX Rikkaaseen ja Interaktiiviseen Sisältöön: Docusaurus hyödyntää MDX-muotoa, joka mahdollistaa React-komponenttien upottamisen suoraan Markdown-tiedostoihin. Tämä on erittäin voimakas ominaisuus, joka muuttaa staattisen dokumentaation dynaamiseksi oppimisympäristöksi. Voimme luoda interaktiivisia kaavioita, jotka visualisoivat monimutkaisia arkkitehtuureja, upottaa live-koodieditoreita, joissa käyttäjät voivat kokeilla API-kutsuja, tai näyttää reaaliaikaista dataa suoraan dokumentaatiosivulla. Tämä parantaa merkittävästi tiedon omaksumista ja sitoutumista.   
+### 2.1 Docusaurus Directory Layout – A Scalable Baseline
 
-Laajennettava Arkkitehtuuri: Docusaurus on rakennettu laajennettavaksi (pluggable). Vaikka aloitamme    
+We intentionally place the Docusaurus implementation at `docs-website/` in the monorepo root. The structure separates documentation from application code while keeping them tightly linked.
 
-classic-esiasetuksella, joka tarjoaa erinomaisen pohjan dokumentaatiolle ja blogille , säilytämme täyden vapauden lisätä tai kehittää omia laajennoksia tulevaisuuden tarpeisiin. Tämä takaa järjestelmän pitkän aikavälin elinkelpoisuuden ja muokattavuuden.   
-
-Sisäänrakennettu Versiointi ja Kansainvälistäminen (i18n): Vaikka välitön tarve ei olekaan ilmeinen, Docusauruksen sisäänrakennettu tuki dokumentaation versioinnille ja kansainvälistämiselle on merkittävä etu. Erityisesti SaaS- ja enterprise-projekteissa on yleistä, että eri asiakkaat käyttävät eri versioita ohjelmistosta. Versioinnin avulla voimme ylläpitää ja tarjota tarkkaa dokumentaatiota jokaiselle julkaistulle versiolle. Tämä on kriittinen ominaisuus, joka varmistaa, että järjestelmä skaalautuu tulevaisuuden liiketoimintavaatimuksiin.   
-
-Tämän arkkitehtonisen valinnan myötä luotava tietämyskeskus ei ole vain passiivinen tietovarasto. Siitä tulee aktiivinen työkalu, joka edistää laatua, selkeyttä ja yhtenäistä insinöörikulttuuria koko organisaatiossa. Se muuttaa tavan, jolla tietoa luodaan, jaetaan ja ylläpidetään, ja tekee siitä kiinteän osan päivittäistä kehitystyötä.
-
-Osa II: Informaatioarkkitehtuuri ja Sisältöstrategia
-Tämä osio esittelee yksityiskohtaisen suunnitelman sivuston rakenteesta, määritellen tarkasti, mihin kukin tieto sijoitetaan ja miksi. Huolellisesti suunniteltu informaatioarkkitehtuuri on elintärkeä, jotta laaja tietomäärä pysyy hallittavana, löydettävänä ja ylläpidettävänä.
-
-2.1 Docusaurus-hakemistorakenne: Skaalautuva Perusta
-
-Ehdotettu hakemistorakenne on suunniteltu selkeyttä ja vastuualueiden erottelua varten. Sijoittamalla Docusaurus-sivuston (docs-website) omaan kansioonsa monorepon juurelle varmistamme, että dokumentaatio on loogisesti erillään, mutta silti tiiviisti kytköksissä projektien lähdekoodiin. Tämä on Docusauruksen suosittelema parhaiden käytäntöjen mukainen rakenne monorepo-ympäristöissä. Selkeä rakenne helpottaa uusien kehittäjien perehtymistä ja tekee sisällön lisäämisestä ja löytämisestä intuitiivista.   
-
-Nykyinen hakemistorakenne:
-
+```
 project30x/
-├── apps/                    # Tyhjät toteutuskansiot jokaiselle 30 projektille
-├── docs-website/            # Docusaurus-sivuston juurihakemisto
+├── apps/                    # Placeholder implementation directories for all 30 projects
+├── docs-website/
 │   ├── docusaurus.config.js
 │   ├── sidebars.js
 │   ├── docs/
@@ -53,7 +45,7 @@ project30x/
 │   │   ├── projects/
 │   │   │   ├── overview.md
 │   │   │   ├── consensus.md
-│   │   │   └── <projektin-slug>/index.md
+│   │   │   └── <project-slug>/index.md
 │   │   ├── platform/
 │   │   ├── architecture/
 │   │   │   └── adr/
@@ -61,234 +53,111 @@ project30x/
 │   ├── blog/
 │   ├── src/
 │   └── static/
-├── description.md           # Ohjelman kuvaus koottuna yhteen tiedostoon
-└── README.md                # Repoa kuvaava yhteenveto
-Rakenteessa projektikohtaiset dokumentit on tasattu suoraan `docs/projects/<slug>/`-hakemistoon, jolloin yhteys `apps/<slug>/`-kansioon voidaan pitää yllä frontmatter-metatiedon (`source_dir`) ja tarvittaessa symbolisten linkkien avulla.
+├── description.md           # Program narrative consolidated into a single brief
+└── README.md                # Repository overview
+```
 
-2.2 Docs vs. Blog -dikotomia: Kriittinen Arkkitehtoninen Päätös
+Project-specific docs sit directly under `docs/projects/<slug>/`, keeping them in sync with `apps/<slug>/` through front-matter metadata (`source_dir`) or optional symlinks.
 
-Yksi Docusauruksen käytön keskeisimmistä ja usein väärinymmärretyistä arkkitehtonisista päätöksistä on docs- ja blog-laajennusten välinen ero. Nämä eivät ole vain kaksi tapaa esittää sisältöä, vaan ne edustavat kahta eri tiedonhallinnan paradigmaa. Selkeän ja johdonmukaisen hallintomallin luominen sille, mitä sisältöä sijoitetaan mihinkin, on elintärkeää sivuston pitkän aikavälin käytettävyydelle ja ylläpidettävyydelle.   
+### 2.2 Docs vs Blog – A Deliberate Separation
 
-docs-laajennuksen ominaisuudet ja käyttötarkoitus:
+The docs and blog plugins represent two distinct knowledge paradigms:
 
-Tarkoitus: docs-osio on tarkoitettu perustavanlaatuiselle, "ikivihreälle" tai ajattomalle tiedolle. Se on kanoninen referenssimateriaali, organisaation kollektiivinen totuus.
+- **Docs** contain evergreen, canonical truths. They are hierarchical, sidebar-driven, and meant to reflect the current state.
+- **Blog** entries are chronological narratives—weekly updates, milestone reviews, retrospectives, and announcements.
 
-Rakenne: Sisältö on luonteeltaan hierarkkista, ei-kronologista, ja sitä selataan pääasiassa sivupalkin (sidebar) kautta. Täällä olevan tiedon oletetaan olevan aina ajantasainen kuvaus nykytilasta.   
+Deciding intentionally where content belongs prevents entropy. The separation forces teams to clarify whether they are documenting durable reference material or logging time-bound events.
 
-Käyttökohteet "Project30x" -hankkeessa:
+### 2.3 Building a Network of Knowledge
 
-Golden Path: Ydinarkkitehtuurin periaatteet, koodausstandardit, pull request -käytännöt ja muut yleiset ohjeet, jotka koskevat kaikkia kehittäjiä.
+Directory structure alone is insufficient. We design aggressive cross-linking patterns so readers can move seamlessly across context levels:
 
-Projects: Yksityiskohtaiset asennusohjeet, API-referenssit, käyttöoppaat ja arkkitehtuurikuvaukset kullekin 30 projektista.
+- Installation guides link into shared CI/CD documentation rather than duplicating instructions.
+- ADRs are referenced from every project relying on the decision to keep rationale visible.
+- Weekly reports point back to the features they celebrate and the ADRs that enabled them.
+- Retrospectives link to the code or documentation embodying the lessons learned.
 
-Platform: Syväluotaavat oppaat ja referenssit jaetuista alustakomponenteista, kuten CI/CD-putkista, infrastruktuurista koodina (IaC), monitoroinnista ja tietoturvakäytännöistä.
+The result is a navigable knowledge graph instead of isolated documents.
 
-Architecture/ADR: Muuttumattomat tallenteet merkittävistä arkkitehtuuripäätöksistä (Architecture Decision Records).
+### 2.4 Content Governance Model
 
-Research: Virallinen dokumentaatio tutkimusmetodologioista, LLM-kokeilujen asetelmista ja toistettavista tuloksista.
+We operationalize the strategy through a simple placement matrix:
 
-blog-laajennuksen ominaisuudet ja käyttötarkoitus:
+| Section        | Directory              | Content Type                     | Primary Audience           | Cadence           | Plugin | Rationale |
+| -------------- | ---------------------- | -------------------------------- | -------------------------- | ----------------- | ------ | --------- |
+| Golden Path    | `docs/golden-path/`    | Standards, best practices        | All engineers              | Infrequent        | docs   | Canonical operating model |
+| Projects       | `docs/projects/`       | Project guides, APIs, runbooks   | Project teams              | As needed         | docs   | Single source of truth per project |
+| Platform       | `docs/platform/`       | CI/CD, infrastructure, security  | Engineering & Ops          | Periodic          | docs   | Shared platform references |
+| Architecture   | `docs/architecture/`   | ADRs, architecture deep dives    | Architects, senior ICs     | Upon decision     | docs   | Immutable decision history |
+| Research       | `docs/research/`       | Experiments, LLM studies         | R&D, technical leadership  | Experiment-driven | docs   | Repeatable scientific records |
+| Reports        | `blog/`                | Weekly updates, milestones       | All stakeholders           | Weekly/quarterly  | blog   | Time-bound progress logs |
+| Retrospectives | `blog/`                | Sprint/team retrospectives       | Project teams              | Sprint cadence    | blog   | Captured lessons with timestamps |
 
-Tarkoitus: blog-osio on tarkoitettu ajalliselle, narratiiviselle tai tapahtumapohjaiselle sisällölle. Se on projektin ja tiimien päiväkirja.
+The table eliminates ambiguity and keeps the architecture coherent as more contributors participate.
 
-Rakenne: Sisältö on kronologista, järjestettynä päivämäärän mukaan. Se tukee ominaisuuksia kuten avainsanoja (tags) ja kirjoittajatietoja (authors), jotka ovat tyypillisiä aikajanalle sijoittuvalle sisällölle.   
-Käyttökohteet "Project30x" -hankkeessa:
+Part III: Navigation Design and User Journeys
+We optimize navigation so the volume of information remains approachable.
 
-Weekly Reports: Viikkoraportit, jotka noudattavat hankkeen aikataulua. Jokainen raportti on päivätty blogikirjoitus, joka voidaan merkitä avainsanoilla (esim. projekti, tiimi).
+### 3.1 Multi-Sidebar Navigation
 
-Milestone Reviews: Yhteenvedot saavutuksista suhteessa vuoden 2025 loppupuolen virstanpylväisiin.
+A single global sidebar would be unwieldy. Instead we rely on:
 
-Retrospectives: Yhteenvedot sprinttien tai projektien retrospektiiveistä. Kirjoittajatiedot ja päivämäärät tarjoavat historiallisen kontekstin tiimin oppimiselle.
+- **`globalSidebar`** for program-wide guides (Golden Path, Platform, Architecture, Research).
+- **`projectsSidebar`** generated from `docs/projects/<slug>/` to provide project-specific navigation coupled with the corresponding source directories.
 
-Announcements: Tiedotteet suurista julkaisuista, uusista työkaluista tai merkittävistä muutoksista.
+### 3.2 Primary Navigation Bar
 
-Tämä tiukka erottelu ei ole rajoitus, vaan ominaisuus, joka pakottaa ylläpitämään arkkitehtonista kurinalaisuutta. Se vaatii tiimiä tietoisesti päättämään, onko jokin tieto ajaton "totuus" vai ajankohtainen "tapahtuma". Tämä kurinalaisuus on avainasemassa tiedon rappeutumisen estämisessä ja sivuston ylläpidettävyyden varmistamisessa pitkällä aikavälillä. Se estää blogin muuttumisen epämääräiseksi "sekalaisen tiedon" kaatopaikaksi, mikä on yleinen ansa vähemmän jäsennellyissä tietämyskannoissa. Työkalu itsessään ohjaa ja ylläpitää informaatioarkkitehtuurin eheyttä.
+The site navbar highlights the main entry points:
 
-2.3 Tiedon Verkosto: Ristiinlinkitysstrategia
+- **Guides** → global program documentation.
+- **Projects** → project catalog and specs.
+- **Blog** → time-bound updates and retrospectives.
+- **GitHub** → repository source.
 
-Staattinen hakemistorakenne ei yksinään riitä. Tietämyskeskuksen todellinen arvo syntyy yhteyksistä, jotka luodaan sisällön välille. Määrittelemme strategian syvälle ja johdonmukaiselle ristiinlinkitykselle, joka muuttaa erilliset dokumentit yhtenäiseksi ja navigoitavaksi tietograafiksi.
+This structure keeps the top-level experience simple while leaving room to grow.
 
-Esimerkkejä linkitysmalleista:
+### 3.3 Search, Tags, and Metadata
 
-Projekti A:n asennusopas (docs/projects/saas/project-a/setup.md) linkittää suoraan kanoniseen CI/CD-putken yleiskatsaukseen (docs/platform/ci-cd/overview.md), välttäen tiedon toistamista.
+Docusaurus requires an external search integration. We standardize on Algolia DocSearch for typo-tolerant, instantaneous results across the entire hub. Consistent front-matter metadata (id, title, description, tags) increases relevance and future-proofs faceted browsing.
 
-Arkkitehtuuripäätös tietokannan valinnasta (docs/architecture/adr/005-database-choice.md) linkitetään jokaisen kyseistä tietokantaa käyttävän projektin dokumentaatiosta.
+Part IV: Governance and Continuous Evolution
+Technology alone cannot keep the hub healthy; disciplined processes and culture are essential.
 
-Viikkoraportti (blog/2025-10-20-weekly-update.md) sisältää linkit juuri valmistuneen ominaisuuden projektidokumentaatioon sekä ADR-dokumenttiin, joka ohjasi sen toteutusta.
+### 4.1 ADR Workflow
 
-Retrospektiivissä (blog/2025-11-05-sprint-retro.md) tunnistettu tekninen velka voidaan linkittää suoraan kyseisen komponentin tekniseen dokumentaatioon (docs/projects/enterprise/project-b/component-x.md).
+Architecture Decision Records are treated as immutable, versioned artifacts:
 
-Tämä strategia muuttaa sivuston dokumenttikokoelmasta integroiduksi järjestelmäksi. Käyttäjät voivat vaivattomasti siirtyä korkean tason tilanneraportista yksittäisen ominaisuuden tekniseen toteutukseen ja edelleen sen taustalla olevaan arkkitehtoniseen päätökseen. Tämä luo kontekstia ja syventää ymmärrystä, mikä nopeuttaa ongelmanratkaisua ja perehtymistä.
+1. Draft the ADR using the shared template inside `docs/architecture/adr/` on a feature branch.
+2. Review through a pull request to capture rationale, debate, and amendments.
+3. Merge once consensus is achieved—at that point the ADR becomes part of the permanent record.
 
-2.4 Sisällön Hallintamalli
+This “ADRs-as-code” approach preserves decision history, keeps discussions transparent, and prevents context loss.
 
-Jotta sisältöstrategia voidaan jalkauttaa tehokkaasti, se on operationalisoitava selkeän hallintamallin avulla. Seuraava taulukko toimii ohjenuorana kaikille sisällöntuottajille ja varmistaa, että informaatioarkkitehtuuri säilyy johdonmukaisena.
+### 4.2 Reporting and Retrospective Cadence
 
-Taulukko: Sisällön Hallintamalli
+Weekly updates and milestone checkpoints are published via the blog. Sprint retrospectives document lessons learned, blockers, and follow-up actions. Linking these posts to relevant docs or ADRs ensures accountability and traceability.
 
-Osio	Hakemistopolku	Sisältötyyppi	Pääasiallinen Kohdeyleisö	Päivitystiheys	Docusaurus-laajennus	Perustelu
-Golden Path	docs/golden-path/	Parhaat käytännöt, standardit	Kaikki kehittäjät	Harvoin	docs	Perustavanlaatuiset, ei-kronologiset periaatteet.
-Projects	docs/projects/...	Projektikohtaiset oppaat, API:t	Projektitiimit	Tarpeen mukaan	docs	Kanoninen referenssimateriaali kullekin projektille.
-Platform	docs/platform/	CI/CD, infra, tietoturva	Kaikki kehittäjät, Ops	Satunnaisesti	docs	Ikivihreä dokumentaatio jaetuille palveluille.
-Architecture	docs/architecture/adr/	ADR:t, järjestelmäsuunnittelu	Arkkitehdit, Senior-kehittäjät	Päätöksen mukaan	docs	Muuttumattomat, historialliset päätöstallenteet.
-Research	docs/research/	Metodit, LLM-tulokset	T&K, teknologiajohto	Kokeilun mukaan	docs	Formaalit, toistettavat tieteelliset dokumentit.
-Reports	blog/	Viikkoraportit, virstanpylväät	Kaikki sidosryhmät	Viikoittain/kausittain	blog	Aikasidonnaiset, kronologiset tilannepäivitykset.
-Retrospectives	blog/	Sprintti/tiimi-retrot	Projektitiimit	Sprintin mukaan	blog	Päivätyt kertomukset tiimin oppimisesta ja tapahtumista.
-Tämä taulukko poistaa epäselvyydet ja toimii yksinkertaisena ja tehokkaana työkaluna jokaiselle kehittäjälle. Kun tarve dokumentoida jotain ilmenee, tämä malli antaa välittömästi vastauksen oikeasta sijainnista, muodosta ja perusteesta. Tämä madaltaa osallistumisen kynnystä ja varmistaa, että huolellisesti suunniteltu arkkitehtuuri säilyy elinvoimaisena ajan myötä.
+### 4.3 Operational Quality Gates
 
-Osa III: Navigaatiosuunnittelu ja Käyttäjäpolut
-Tässä osiossa keskitytään käyttäjäkokemukseen ja varmistetaan, että valtava tietomäärä on helposti löydettävissä eikä tunnu ylivoimaiselta. Tehokas navigaatio on avainasemassa tietämyskeskuksen omaksumisessa ja hyödyntämisessä.
+Every documentation change follows the same rigor as code changes:
 
-3.1 Monisivupalkkinen Navigaatiojärjestelmä: Konteksti on Kaikki
+- Pull requests must include updated docs, diagrams, or ADR references.
+- CI enforces linting, broken-link checks, and build validation.
+- Editors adhere to the metadata conventions outlined above.
 
-Yksi ainoa, automaattisesti generoitu sivupalkki kaikille 30 projektille sekä alusta- ja arkkitehtuuridokumentaatiolle olisi käyttökelvoton. Se olisi liian pitkä, vaikeaselkoinen ja aiheuttaisi käyttäjälle valtavan kognitiivisen kuorman. Ratkaisu on strateginen usean sivupalkin (multi-sidebar) arkkitehtuuri, joka tarjoaa käyttäjälle kontekstisidonnaisen navigaation.   
+### 4.4 Ownership and Roles
 
-Ehdotettu sivupalkkiarkkitehtuuri:
+We assign clear responsibilities:
 
-Globaali Sivupalkki (`globalSidebar`): Näkyvissä ohjelman yhteisillä sivuilla (Golden Path, Platform, Architecture, Research) ja keskittyy horisontaalisiin teemoihin.
+- **Program core team** curates the Golden Path and platform documentation.
+- **Project maintainers** keep their `docs/projects/<slug>/` entries accurate and aligned with `apps/<slug>/`.
+- **Architecture guild** stewards the ADR process.
+- **Research guild** maintains experiments and publishes validated findings.
 
-Projektisivupalkki (`projectsSidebar`): Automaattisesti generoitava navigaatio, joka kattaa kaikki `docs/projects/<slug>/`-dokumentit. Projektien frontmatterissä oleva `displayed_sidebar: projectsSidebar` ja `source_dir: apps/<slug>` varmistavat, että dokumentaatio ja toteutuskansio pysyvät linkitettyinä ilman välikategoriahakemistoja.
+### 4.5 Evolution Roadmap
 
-Tämä malli tarjoaa kontekstisidonnaisen navigaation samalla, kun se pitää yllä suoraviivaista hakemistorakennetta, jota voidaan helposti laajentaa esimerkiksi symbolisilla linkeillä toteutuskoodiin.
+Future enhancements include enabling doc versioning per release train, adding localized content once international demand emerges, integrating analytics to understand reader behavior, and automating cross-links where metadata indicates relationships.
 
-3.2 Yläpalkki ja Päänavigaatio
+---
 
-Sivuston yläpalkki (navbar) toimii ensisijaisena sisäänkäyntipisteenä sivuston pääosioihin. Sen tulee olla selkeä ja tarjota nopea pääsy tärkeimpiin sisältökokonaisuuksiin.   
-
-Nykyinen yläpalkki heijastaa tätä rakennetta seuraavasti:
-
-- **Guides** – linkittyy `globalSidebar`-sivuihin (Golden Path, Platform, Architecture, Research).
-- **Projects** – ohjaa `projectsSidebar`-navigaatioon, joka listaa kaikki yksittäiset projektit ja konsensus-/overview-sivut.
-- **Blog** – tarjoaa kronologisen näkymän raportteihin ja retropostauksiin.
-- **GitHub** – suora linkki repositorion pääsivulle (`taituo/project30x`).
-
-Tämän kevyen navigaation etuna on, että se korostaa kahta pääsisääntuloa (ohjaavat oppaat ja projektit) samalla, kun se jättää tilaa laajentaa valikkoja esimerkiksi myöhempiin tuotantoon liittyviin integraatioihin.
-
-3.3 Löydettävyyden Parantaminen: Haku, Avainsanat ja Metadata
-
-Docusaurus ei sisällä sisäänrakennettua hakutoimintoa. Tämä on kriittinen puute näin laajassa tietämyskeskuksessa, ja se on korjattava ulkoisella ratkaisulla. Tehokas haku on välttämätön, jotta käyttäjät voivat nopeasti löytää tarvitsemansa tiedon riippumatta sen sijainnista hierarkiassa.   
-
-Hakustrategia:
-Integroimme sivustolle Algolia DocSearch -palvelun. Se on de facto -standardi Docusaurus-sivustoille ja tarjoaa erittäin nopean, tarkan ja kirjoitusvirheitä sietävän haun koko tietämyskannan yli. Tämä ei ole neuvoteltavissa oleva vaatimus; ilman tehokasta hakua sivuston arvo laskee merkittävästi. Haku mahdollistaa poikkileikkaavat "hypyt" eri osa-alueiden välillä. Kehittäjä, joka kohtaa tietoturvaongelman, ei välttämättä tiedä, missä tietoturvaohjeistus sijaitsee, mutta hän voi hakea termillä "CSRF-suojaus" ja päästä suoraan oikealle sivulle (docs/platform/security/csrf.md). Tämä tukee täysin erilaista tiedonhakumallia kuin hierarkkinen selaaminen.
-
-Metadatastrategia:
-Vahvistamme tiukan metadatakäytännön (frontmatter) kaikelle sisällölle. Rikas metadata ei ole ainoastaan näyttämistä varten; Algolia indeksoi sen, mikä parantaa dramaattisesti haun relevanssia ja mahdollistaa tulevaisuudessa tiedon suodattamisen ja fasettinavigoinnin.
-
-Docs-sivut: Pakolliset kentät: id, title, description, displayed_sidebar. Suositeltu kenttä: tags-lista (esim. tags: [api, backend, postgres]).
-
-Blog-kirjoitukset: Pakolliset kentät: slug, title, authors, date. Suositeltu kenttä: tags-lista (esim. tags: [weekly-report, project-apollo, q4-2025]).
-
-Yhdessä strukturoitu navigaatio (sivupalkit) ja strukturoimaton haku (Algolia) palvelevat kahta erilaista, mutta yhtä tärkeää käyttäjän matkaa. Tämä kaksitahoinen lähestymistapa varmistaa, että insinöörit voivat käyttää tietoa tehokkaasti riippumatta siitä, miten he lähestyvät ongelmaa. Käyttäjäkokemus ei ole vain estetiikkaa, vaan se on olennainen osa alustan hyödyllisyyttä ja vaikuttaa suoraan kehittäjien tuottavuuteen.
-
-Osa IV: Hallintamalli ja Tietämyskannan Kehittäminen
-Tämä osio kuvaa prosessit, jotka pitävät tietämyskeskuksen elävänä, tarkkana ja integroituna tiimien työnkulkuihin. Teknologia on vain mahdollistaja; menestys riippuu prosesseista ja kulttuurista.
-
-4.1 Päätösten Kodifiointi: ADR-työnkulku
-
-Arkkitehtuuripäätöstallenteet (ADR) ovat kriittinen osa teknistä hallintaa. Niitä ei tule säilyttää erillisissä dokumentinhallintajärjestelmissä, vaan ne on kohdeltava muuttumattomina, versioituina artefakteina osana tietämyskeskusta.
-
-Prosessimalli:
-
-Ehdotus: Uusi ADR kirjoitetaan Markdown-muodossa käyttäen standardoitua pohjaa. Tiedosto sijoitetaan hakemistoon docs/architecture/adr/ uudessa Git-haarassa.
-
-Katselmointi: ADR katselmoidaan Pull Request -prosessin kautta. Tämä mahdollistaa asynkronisen, dokumentoidun keskustelun ja väittelyn arkkitehtien ja senior-kehittäjien välillä. Kommentit ja muutosehdotukset tallentuvat osaksi PR:n historiaa.
-
-Hyväksyntä & Yhdistäminen: Kun konsensus on saavutettu, PR hyväksytään ja yhdistetään päähaaraan. Tässä hetkessä ADR:stä tulee osa virallista, muuttumatonta arkkitehtonista historiaa.
-
-Tämä "ADRs-as-code" -prosessi varmistaa, että suurten teknisten päätösten taustalla oleva historia ja perustelut säilyvät ja ovat kaikkien saatavilla. Se estää tiedon katoamista ja ehkäisee tulevia kiistoja menneistä valinnoista. Kun arkkitehtuurikeskustelu käydään PR:n kautta, siitä tulee läpinäkyvää ja auditoitavaa. Git-historiasta muodostuu muuttumaton kirjanpito tehdyistä päätöksistä.
-
-4.2 Matkan Dokumentointi: Raportointi- ja Retrospektiivikadenssi
-
-Tämä alaluku operationalisoi käyttäjän esittämän "Milestone-mallin" ja viikkoaikataulun hyödyntämällä blog-laajennuksen kronologista luonnetta.
-
-Prosessimalli:
-
-Viikkoraportit: Nimetty henkilö (esim. tiiminvetäjä) vastaa uuden blogikirjoituksen luomisesta joka viikko käyttäen standardoitua pohjaa. Tiedoston nimeämiskäytäntö YYYY-MM-DD-weekly-update.md on pakollinen kronologisen järjestyksen varmistamiseksi. Avainsanoja (tags) käytetään raportin liittämiseen tiettyihin projekteihin tai tiimeihin.   
-
-Virstanpylväiden Katsaukset: Jokaisen virstanpylväsjakson päätteeksi luodaan kattava blogikirjoitus. Se tiivistää saavutukset, haasteet ja seuraavat askeleet, ja linkittää relevantteihin viikkoraportteihin ja projektidokumentaatioon.
-
-Retrospektiivit: Sprintin tai projektin jälkeiset retrospektiivit dokumentoidaan blogikirjoituksina. Ne tallentavat keskeiset opit, onnistumiset ja parannuskohteet. authors-metatietoa käytetään liittämään kirjoitus osallistuneeseen tiimiin.   
-Tämä prosessi luo haettavan, kronologisen historian koko "Project30x" -hankkeesta. Se tekee edistymisen seurannasta helppoa ja auttaa ymmärtämään projektin evoluutiota ajan myötä. Se ei ole pelkästään raportointia, vaan se on kollektiivisen muistin rakentamista.
-
-Integroimalla raportointi ja ADR:t Git-pohjaiseen työnkulkuun muutamme hallintamallin byrokraattisesta prosessista läpinäkyväksi, auditoitavaksi ja kehittäjäystävälliseksi toiminnaksi. Tämä lähestymistapa lisää luottamusta prosesseihin, koska historia on avoin eikä sitä voi helposti muuttaa. Se demokratisoi tiedon saantia, mahdollistaen kenelle tahansa kehittäjälle ominaisuuden jäljittämisen sen alkuperäiseen ADR-päätökseen ja sen edistymisen seuraamisen viikkoraporttien kautta. Tämä edistää korkean luottamuksen ja vastuullisuuden insinöörikulttuuria.
-
-Osa V: Tulevaisuuteen Suuntautuvat Aloitteet: Tutkimuskeskus
-Tämä osio käsittelee käyttäjän tulevaisuuteen suuntautuvia vaatimuksia tutkimus- ja kehitystyön dokumentoinnista.
-
-5.1 Tutkimus- ja Kokeilukeskus
-
-Hakemisto docs/research/ toimii virallisena arkistona T&K-toiminnalle. Tämän sisällön sijoittaminen docs-osioon blogin sijaan on tietoinen arkkitehtoninen valinta. Tutkimustulokset, erityisesti liittyen LLM-kokeiluihin, on dokumentoitava tavalla, joka on toistettavissa ja joka muodostaa pysyvän referenssin, ei pelkästään kronologisen päiväkirjamerkinnän.
-
-Sisällön Rakenne:
-Tämä osio tulee käsitellä formaalina dokumentaationa. Sen on oltava tieteellisen tarkka ja jäsennelty.
-
-Mahdolliset alihakemistot:
-
-docs/research/methodologies/: Standardoidut pohjat ja ohjeet kokeilujen suorittamiseen. Tämä varmistaa, että tutkimus on johdonmukaista ja vertailukelpoista.
-
-docs/research/llm-experiments/: Jokainen kokeilu saa oman kansionsa, joka sisältää yksityiskohtaisen dokumentaation hypoteesista, koeasetelmasta, käytetystä datasta, saaduista tuloksista ja johtopäätöksistä.
-
-Tämä rakenne varmistaa, että T&K-työ tuottaa kestävää ja hyödynnettävää immateriaaliomaisuutta yritykselle, eikä vain yksittäisiä tuloksia, jotka unohtuvat nopeasti. Se luo perustan, jonka päälle voidaan rakentaa tulevaa tutkimusta ja tuotekehitystä.
-
-Perustamalla formaalin, docs-pohjaisen prosessin tutkimuksen dokumentointiin, nostamme T&K-toiminnan ad-hoc-kokeiluista kurinalaiseksi, tieteelliseksi käytännöksi. Tämä lisää todennäköisyyttä, että tutkimustulokset integroidaan onnistuneesti tuotantojärjestelmiin, koska ne on dokumentoitu samalla tarkkuudella ja laatuvaatimuksilla kuin järjestelmät itse. Kun toinen tiimi haluaa hyödyntää aiempaa LLM-kokeilua, he eivät löydä epämääräistä blogikirjoitusta, vaan formaalin dokumentin, jossa on selkeät osiot metodologiasta ja tuloksista. Tämä tekee tutkimuksesta luotettavampaa ja helpommin operationalisoitavaa, mikä on merkittävä kilpailuetu.
-
-Osa VI: Julkaisu- ja Operatiivinen Putki
-Tämä viimeinen osio esittää konseptuaalisen suunnitelman sivuston julkaisemiseksi ja ylläpitämiseksi. Automaatio on avainasemassa "docs-as-code" -strategian onnistumisessa.
-
-6.1 Julkaisu GitHub Pagesin ja Actionsin Avulla
-
-Käytämme hosting-alustana GitHub Pagesia, koska se on ilmainen, syvästi integroitu GitHubiin ja ihanteellinen staattisille sivustoille. Julkaisuprosessi automatisoidaan täysin käyttämällä GitHub Actions -työnkulkuja.   
-
-Konseptuaalinen CI/CD-työnkulku (.github/workflows/deploy.yml):
-
-Käynnistin (Trigger): Työnkulku käynnistyy automaattisesti jokaisesta push-tapahtumasta tai yhdistämisestä (merge) main-haaraan.
-
-Koodin Nouto (Checkout): Toiminto lataa monorepon lähdekoodin.
-
-Node.js-ympäristön Asetus: Määritetään oikea Node.js-versio.
-
-Riippuvuuksien Asennus: Suoritetaan yarn install tai npm install docs-website-hakemistossa.
-
-Sivuston Rakentaminen (Build): Suoritetaan komento npm run build. Tämä kääntää Docusaurus-sivuston staattisiksi HTML-, CSS- ja JS-tiedostoiksi    
-
-build-hakemistoon.
-
-Julkaisu (Deploy): Erillinen GitHub Action -toiminto (esim. peaceiris/actions-gh-pages) ottaa build-hakemiston sisällön ja työntää sen erilliseen gh-pages-haaraan samassa repositoriossa.   
-Repositorion Konfigurointi:
-
-Repositorion asetuksissa GitHub Pages -toiminto konfiguroidaan palvelemaan sisältöä gh-pages-haarasta.   
-GitHub Actions -työnkululle annetaan tarvittavat kirjoitusoikeudet repositorioon, jotta se voi päivittää gh-pages-haaraa.   
-6.2 Docusaurus-konfiguraation Olennaiset Asetukset
-
-docusaurus.config.js-tiedosto on konfiguroitava oikein GitHub Pages -julkaisua varten. Virheelliset asetukset ovat yleinen syy epäonnistuneille julkaisuille.   
-
-Tärkeimmät Kentät:
-
-organizationName: GitHub-organisaation tai käyttäjän nimi.
-
-projectName: Monorepo-repositorion nimi.
-
-baseUrl: Tämä on asetettava arvoon /<projectName>/. Tämä on kriittisen tärkeä asetus, joka varmistaa, että CSS- ja JS-tiedostot latautuvat oikein, kun sivusto ei ole domainin juurella.
-
-trailingSlash: Usein asetetaan arvoon false yhteensopivuuden parantamiseksi GitHub Pagesin reitityksen kanssa.
-
-Täysin automatisoitu CI/CD-putki on koko "docs-as-code" -strategian selkäranka. Se tekee oikeasta tavasta toimia (dokumentaation päivittäminen) myös helpoimman tavan. Poistamalla kaikki manuaaliset julkaisuvaiheet vähennämme kitkaa ja kannustamme aktiivisesti osallistumaan. Kun kehittäjän tarvitsee vain yhdistää hyväksytty pull request ja muutokset ovat hetken kuluttua livenä, kynnys pientenkin parannusten tekemiseen madaltuu dramaattisesti.
-
-Tämä helppokäyttöisyys on voimakas psykologinen ajuri. Se edistää pienten, inkrementaalisten päivitysten kulttuuria, mikä on avain dokumentaation pitämiseen tarkkana ja ajantasaisena. Tämä luo itseään vahvistavan kehän: koska dokumentaatiota on helppo päivittää, useammat ihmiset päivittävät sitä. Koska sitä päivitetään usein, se on luotettavampaa. Koska se on luotettavaa, useammat ihmiset käyttävät sitä ja osallistuvat sen kehittämiseen. CI/CD-putki ei siis ole vain tekninen toteutusyksityiskohta; se on dokumentaatiokulttuurin moottori.
-
-Johtopäätökset ja Suositukset
-Tämä strateginen suunnitelma esittää kattavan arkkitehtuurin "Project30x" -hankkeen yhtenäiselle tietämyskeskukselle. Hyödyntämällä Docusaurus-alustaa ja "docs-as-code" -filosofiaa, voimme rakentaa järjestelmän, joka ei ainoastaan ratkaise monimutkaisen monorepo-ympäristön haasteita, vaan myös muuttaa dokumentaation strategiseksi voimavaraksi, joka edistää laatua, tuottavuutta ja yhtenäistä insinöörikulttuuria.
-
-Keskeiset suositukset ovat:
-
-Sitoutuminen "Docs-as-Code" -kulttuuriin: Tekninen toteutus on vain osa ratkaisua. Onnistuminen edellyttää koko organisaation sitoutumista periaatteeseen, että dokumentaatio on erottamaton osa ohjelmistokehitystä ja sen päivittäminen on jokaisen kehittäjän vastuulla.
-
-Tiukka Informaatioarkkitehtuurin Noudattaminen: docs- ja blog-osioiden välinen selkeä ero on säilytettävä. Sisällön hallintamallin (Content Governance Matrix) tulee toimia ohjenuorana kaikelle sisällöntuotannolle.
-
-Investointi Käyttäjäkokemukseen: Monisivupalkkinen navigaatio ja tehokas Algolia-haku ovat välttämättömiä. Niihin panostaminen maksaa itsensä takaisin parantuneena löydettävyytenä ja kehittäjien tuottavuutena.
-
-Prosessien Integrointi: ADR-työnkulkujen, raportoinnin ja retrospektiivien integrointi Git-pohjaiseen prosessiin tekee hallinnasta läpinäkyvää ja tehokasta.
-
-Täysi Automaatio: CI/CD-putken rakentaminen on ensimmäinen ja tärkein tekninen tehtävä. Se poistaa kitkan ja toimii moottorina, joka pitää tietämyskeskuksen elävänä ja relevanttina.
-
-Noudattamalla tätä suunnitelmaa "Project30x" -hanke voi luoda paitsi maailmanluokan dokumentaatioalustan, myös kestävän tiedonhallinnan ekosysteemin, joka skaalautuu tulevaisuuden haasteisiin ja tukee organisaation kasvua ja innovaatiota.
+By treating documentation as first-class code, enforcing a consistent information architecture, and investing in the processes that keep content current, Project30x gains a durable knowledge hub that scales with the program.

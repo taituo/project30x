@@ -1,14 +1,14 @@
 ---
 id: projects-consensus
-title: Projektispeksien konsensus
+title: Project Spec Consensus
 sidebar_position: 2
 ---
 
-Tämä dokumentti kokoaa alkuperäiset projektispekseihin kirjatut yksityiskohdat yhteen tiedostoon. Alkuperäiset, täydet speksit löytyvät edelleen hakemistosta `help/projects/`.
+This document consolidates the original project specification details into a single file. The complete source specifications still live under `help/projects/`.
 
 ## SaaS – Code Snippet Search
 *Semantic search engine for source code across repositories.*
-Lähdekansio: `apps/code-snippet-search`
+Source directory: `apps/code-snippet-search`
 
 ### Context
 
@@ -61,7 +61,7 @@ Help developers discover reuse opportunities and enforce best practices through 
 
 ## Enterprise – Compliance Pipeline
 *Automated evidence collection for SOC2 and GDPR reporting.*
-Lähdekansio: `apps/compliance-pipeline`
+Source directory: `apps/compliance-pipeline`
 
 ### Context
 
@@ -114,7 +114,7 @@ Automate compliance evidence gathering so security teams maintain continuous aud
 
 ## Python Service – Cron-as-a-Service
 *Hosted scheduler translating YAML definitions into webhook executions.*
-Lähdekansio: `apps/cron-as-a-service`
+Source directory: `apps/cron-as-a-service`
 
 ### Context
 
@@ -167,7 +167,7 @@ Give teams a lightweight internal cron alternative with auditable schedules and 
 
 ## Enterprise – Data Mesh Demo
 *Domain-aligned data products with streaming ingestion and governance.*
-Lähdekansio: `apps/data-mesh-demo`
+Source directory: `apps/data-mesh-demo`
 
 ### Context
 
@@ -220,7 +220,7 @@ Demonstrate data mesh principles by empowering domain teams to publish certified
 
 ## Enterprise – Document e-sign
 *Secure digital signature workflow with compliant audit trails.*
-Lähdekansio: `apps/document-esign`
+Source directory: `apps/document-esign`
 
 ### Context
 
@@ -273,7 +273,7 @@ Enable enterprises to handle document signing with cryptographic guarantees and 
 
 ## Enterprise – Edge & CDN Personalization
 *Edge runtime delivering personalized content and experiments.*
-Lähdekansio: `apps/edge-personalization`
+Source directory: `apps/edge-personalization`
 
 ### Context
 
@@ -326,7 +326,7 @@ Run personalization logic at the CDN edge to minimize latency and enable rapid e
 
 ## Enterprise – IAM with Keycloak
 *Multi-tenant identity and access management using Keycloak.*
-Lähdekansio: `apps/enterprise-iam-keycloak`
+Source directory: `apps/enterprise-iam-keycloak`
 
 ### Context
 
@@ -379,7 +379,7 @@ Provide enterprise-ready IAM baseline with tenant isolation, federation, and aud
 
 ## SaaS – Feature Flag Service
 *Multi-tenant feature flag platform with SDKs and audit trails.*
-Lähdekansio: `apps/feature-flag-service`
+Source directory: `apps/feature-flag-service`
 
 ### Context
 
@@ -432,7 +432,7 @@ Provide a self-hostable alternative to commercial flag services with strong gove
 
 ## Enterprise – FinOps Dashboard
 *Cost observability platform aggregating cloud spend and optimization insights.*
-Lähdekansio: `apps/finops-dashboard`
+Source directory: `apps/finops-dashboard`
 
 ### Context
 
@@ -485,7 +485,7 @@ Provide finance and engineering teams with shared visibility into cloud costs an
 
 ## SaaS – Forms to Workflows
 *Automation platform converting form submissions into orchestrated workflows.*
-Lähdekansio: `apps/forms-to-workflows`
+Source directory: `apps/forms-to-workflows`
 
 ### Context
 
@@ -538,7 +538,7 @@ Help operations teams automate repetitive tasks by connecting form inputs to rul
 
 ## Python Service – Git Activity Heatmap
 *Service that aggregates commit activity into calendar heatmaps.*
-Lähdekansio: `apps/git-activity-heatmap`
+Source directory: `apps/git-activity-heatmap`
 
 ### Context
 
@@ -591,7 +591,7 @@ Surface commit intensity across multiple repositories to help engineering manage
 
 ## SaaS – GraphQL BFF Gateway
 *Federated GraphQL gateway aggregating multiple backend services.*
-Lähdekansio: `apps/graphql-bff-gateway`
+Source directory: `apps/graphql-bff-gateway`
 
 ### Context
 
@@ -644,7 +644,7 @@ Deliver a single API edge for client teams while shielding them from backend spr
 
 ## GraphQL Service – Pokedex
 *GraphQL API and client delivering enriched Pokédex data.*
-Lähdekansio: `apps/graphql-pokedex`
+Source directory: `apps/graphql-pokedex`
 
 ### Context
 
@@ -697,7 +697,7 @@ Illustrate GraphQL best practices—from schema design to client caching—using
 
 ## Rust Service – HTTP Echo with Rate Limiting
 *Minimal axum service showcasing middleware-driven rate limiting.*
-Lähdekansio: `apps/http-echo-rate-limit`
+Source directory: `apps/http-echo-rate-limit`
 
 ### Context
 
@@ -750,7 +750,7 @@ Demonstrate how to protect lightweight services with per-client throttling while
 
 ## Rust CLI – img-minify
 *Command-line image minification tool demonstrating performant Rust pipelines.*
-Lähdekansio: `apps/img-minify-cli`
+Source directory: `apps/img-minify-cli`
 
 ### Context
 
@@ -803,7 +803,7 @@ Build a fast, reproducible CLI that optimizes common image formats so developers
 
 ## TypeScript Web – Invoice PDF Generator
 *React-based form flow that produces branded PDF invoices.*
-Lähdekansio: `apps/invoice-pdf-ui`
+Source directory: `apps/invoice-pdf-ui`
 
 ### Context
 
@@ -856,7 +856,7 @@ Deliver a browser-first invoicing experience so founders can prototype billing w
 
 ## Infra Demo – kind → Helm Hello
 *Infrastructure walkthrough deploying a hello service to kind using Helm.*
-Lähdekansio: `apps/kind-helm-hello`
+Source directory: `apps/kind-helm-hello`
 
 ### Context
 
@@ -909,7 +909,7 @@ Teach contributors how to bootstrap local Kubernetes environments with GitOps-fr
 
 ## SaaS – Graphical Log Explorer
 *UI layer over Loki enabling saved searches, dashboards, and alerts.*
-Lähdekansio: `apps/log-explorer`
+Source directory: `apps/log-explorer`
 
 ### Context
 
@@ -962,7 +962,7 @@ Make Loki log analytics approachable for application teams by offering curated v
 
 ## Rust/WASM – Markdown Previewer
 *Live markdown preview application compiled to WebAssembly.*
-Lähdekansio: `apps/markdown-previewer-wasm`
+Source directory: `apps/markdown-previewer-wasm`
 
 ### Context
 
@@ -1015,7 +1015,7 @@ Showcase how to share Rust code between native and WASM targets while providing 
 
 ## Enterprise – ML Feature Store
 *Hybrid feature store supporting batch and online serving.*
-Lähdekansio: `apps/ml-feature-store`
+Source directory: `apps/ml-feature-store`
 
 ### Context
 
@@ -1068,7 +1068,7 @@ Enable ML teams to reuse validated features across models with consistent govern
 
 ## Enterprise – Multi-cloud GitOps
 *GitOps reference deploying applications across EKS, GKE, and AKS.*
-Lähdekansio: `apps/multi-cloud-gitops`
+Source directory: `apps/multi-cloud-gitops`
 
 ### Context
 
@@ -1121,7 +1121,7 @@ Provide a blueprint for consistent application deployment and failover across mu
 
 ## SaaS – Multi-tenant Billing
 *Billing engine integrating Stripe for usage-based and subscription models.*
-Lähdekansio: `apps/multi-tenant-billing`
+Source directory: `apps/multi-tenant-billing`
 
 ### Context
 
@@ -1174,7 +1174,7 @@ Enable SaaS products to launch pricing experiments with minimal engineering over
 
 ## Enterprise – Observability Suite
 *Full-stack observability reference deploying OTel, Prometheus, Loki, and Tempo with SLO UI.*
-Lähdekansio: `apps/observability-suite`
+Source directory: `apps/observability-suite`
 
 ### Context
 
@@ -1227,7 +1227,7 @@ Provide a reusable platform blueprint for observability that teams can adopt wit
 
 ## SaaS – Offline Notes Mobile
 *Offline-first note-taking app with sync server and encryption.*
-Lähdekansio: `apps/offline-notes-mobile`
+Source directory: `apps/offline-notes-mobile`
 
 ### Context
 
@@ -1280,7 +1280,7 @@ Deliver reliable mobile note taking with conflict resolution and optional end-to
 
 ## Enterprise – Order Management Platform
 *Distributed order management system with saga orchestration and idempotent workflows.*
-Lähdekansio: `apps/order-management-platform`
+Source directory: `apps/order-management-platform`
 
 ### Context
 
@@ -1333,7 +1333,7 @@ Support enterprise order flows spanning carts, payments, fulfillment, and notifi
 
 ## SaaS – Policy-as-Code Admin
 *Management portal for RBAC/ABAC policies with OPA integration.*
-Lähdekansio: `apps/policy-as-code-admin`
+Source directory: `apps/policy-as-code-admin`
 
 ### Context
 
@@ -1386,7 +1386,7 @@ Empower security teams to manage authorization policies centrally and roll out c
 
 ## SaaS – Finnish RAG Search
 *Retrieval-augmented generation service focused on Finnish corpora.*
-Lähdekansio: `apps/rag-search-fi`
+Source directory: `apps/rag-search-fi`
 
 ### Context
 
@@ -1439,7 +1439,7 @@ Deliver high-quality Finnish question answering using curated corpora, robust re
 
 ## SaaS – Realtime Analytics
 *Event ingestion pipeline with live funnel analytics and cohort exploration.*
-Lähdekansio: `apps/realtime-analytics`
+Source directory: `apps/realtime-analytics`
 
 ### Context
 
@@ -1492,7 +1492,7 @@ Help product teams understand user journeys quickly with self-serve analytics de
 
 ## Security Pipeline – SBOM & Scan
 *Reusable CI pipeline that generates SBOMs and enforces vulnerability gates.*
-Lähdekansio: `apps/sbom-scan-pipeline`
+Source directory: `apps/sbom-scan-pipeline`
 
 ### Context
 
@@ -1545,7 +1545,7 @@ Codify a security baseline so every project inherits SBOM generation, dependency
 
 ## TypeScript Service – WebSocket Chat Mini
 *Minimal real-time chat showcasing Fastify WebSocket integration.*
-Lähdekansio: `apps/ws-chat-mini`
+Source directory: `apps/ws-chat-mini`
 
 ### Context
 
