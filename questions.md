@@ -1,9 +1,7 @@
 # Open Questions & Next Steps
 
-1. Validate the Docusaurus site by installing dependencies, running the dev server, and confirming sidebar navigation works as expected.
-3. Establish CI/CD workflows for the documentation site (build + deploy).. basic versions
-4. Determine the scaffolding approach and templates each project should adopt before coding begins, including shared packages and infrastructure baselines.
-5. Make basic
-6. Plan the ADR template and review cadence so architecture decisions stay synchronized with the new specs.
-7. Identify the teams or agents responsible for maintaining the security pipeline, observability suite, and research logs as implementations move forward.
-   
+1. Install dependencies under `docs-website/` and verify the site locally with `npm run start`, followed by a production build check via `npm run build`.
+2. Set up a GitHub Pages deployment workflow (branch `gh-pages`, Actions job, custom domain if needed) and validate the publish step.
+3. Define reusable scaffolding templates for the app directories (CLI, SaaS, enterprise) covering lint/test, CI, and IaC baselines.
+4. Finalise the ADR template and review cadence so architectural decisions remain traceable as implementation begins.
+5. Assign ownership for shared capabilities (security pipeline, observability suite, research logs) and document the operating agreements.

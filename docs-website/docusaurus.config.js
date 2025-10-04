@@ -1,13 +1,14 @@
 // @ts-check
 
 const config = {
-  title: 'Softa 2025 Knowledge Hub',
-  tagline: 'Specs and governance for the Softa 2025 monorepo program',
-  url: 'https://softa-2025.example.com',
-  baseUrl: '/',
+  title: 'Project30x Knowledge Hub',
+  tagline: 'Specs and governance for the Project30x monorepo program',
+  url: 'https://taituo.github.io',
+  baseUrl: '/project30x/',
   favicon: 'img/favicon.ico',
-  organizationName: 'softa',
-  projectName: 'softa-2025',
+  organizationName: 'taituo',
+  projectName: 'project30x',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
@@ -34,12 +35,12 @@ const config = {
   ],
   themeConfig: {
     navbar: {
-      title: 'Softa 2025',
+      title: 'Project30x',
       items: [
         { type: 'docSidebar', sidebarId: 'globalSidebar', label: 'Guides', position: 'left' },
         { type: 'docSidebar', sidebarId: 'projectsSidebar', label: 'Projects', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
-        { href: 'https://github.com/softa/softa-2025', label: 'GitHub', position: 'right' },
+        { href: 'https://github.com/taituo/project30x', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
@@ -50,7 +51,7 @@ const config = {
           items: [
             { label: 'Vision', to: '/docs/golden-path/intro' },
             { label: 'Architecture', to: '/docs/architecture/adr/adr-process' },
-            { label: 'Research', to: '/docs/research/overview' },
+            { label: 'Research', to: '/docs/research/research-overview' },
           ],
         },
         {
@@ -61,7 +62,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Softa 2025`,
+      copyright: `Copyright © ${new Date().getFullYear()} Project30x`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/github'),

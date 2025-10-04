@@ -1,7 +1,7 @@
-# Project30x – Softa 2025 Knowledge Hub
+# Project30x Knowledge Hub
 
 ## Vision
-Project30x is the unifying documentation and specification workspace for the Softa 2025 program. The goal is to take thirty greenfield ideas from rough, "dirty" inception to well-governed, production-ready solutions built on validated technology stacks. Every project is documented, reviewed, and improved through a docs-as-code workflow that keeps knowledge, architecture, and delivery plans in lockstep.
+Project30x is the unifying documentation and specification workspace for the Project30x program. The goal is to take thirty greenfield ideas from rough, "dirty" inception to well-governed, production-ready solutions built on validated technology stacks. Every project is documented, reviewed, and improved through a docs-as-code workflow that keeps knowledge, architecture, and delivery plans in lockstep.
 
 ## Scope in Numbers
 - **30 reference implementations** spanning CLI utilities, SaaS platforms, and enterprise-grade systems.

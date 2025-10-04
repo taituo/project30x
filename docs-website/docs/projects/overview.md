@@ -4,7 +4,7 @@ title: Projektien yleiskatsaus
 sidebar_position: 1
 ---
 
-Tämä katsaus kokoaa Softa 2025 -ohjelman 30 projektia yhteen näkymään. Jokaisella projektilla on oma hakemistonsa `docs/projects/<projekti>/`, jolloin dokumentaatio ja lähdekoodi voidaan linkittää toisiinsa helposti (esimerkiksi symbolisilla linkeillä `apps/<projekti>`-kansioon).
+Tämä katsaus kokoaa Project30x -ohjelman 30 projektia yhteen näkymään. Jokaisella projektilla on oma hakemistonsa `docs/projects/<projekti>/`, jolloin dokumentaatio ja lähdekoodi voidaan linkittää toisiinsa helposti (esimerkiksi symbolisilla linkeillä `apps/<projekti>`-kansioon).
 
 ### Projektiryhmät
 

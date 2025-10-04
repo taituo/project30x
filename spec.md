@@ -1,10 +1,10 @@
-[O[IStrateginen Suunnitelma: "Softa 2025" Monorepon Yhtenäinen Tietämyskeskus
+[O[IStrateginen Suunnitelma: "Project30x" Monorepon Yhtenäinen Tietämyskeskus
 Osa I: Arkkitehtuurin Perusta: Yhtenäinen Tietämyskeskus
 Tämä perustavanlaatuinen osio määrittelee Docusaurus-sivuston ei ainoastaan dokumentaatiotyökaluna, vaan strategisena voimavarana tiedonhallintaan ja kehittäjäkokemuksen parantamiseen monimutkaisessa monorepo-ympäristössä.
 
 1.1 Monorepon Haaste: Monimutkaisuuden Hallinta Skaalassa
 
-Nykyaikainen ohjelmistokehitys, erityisesti laajamittaisissa ympäristöissä, kohtaa merkittäviä haasteita. "Softa 2025" -hankkeen konteksti – noin 30 projektia, jotka kattavat pieniä työkaluja, SaaS-alustoja ja enterprise-tason järjestelmiä ja jotka on toteutettu eri teknologiapinoilla yhdessä monorepossa – on tästä erinomainen esimerkki. Tällainen ympäristö, vaikka se tarjoaa etuja koodin jakamisessa ja yhtenäisissä työkaluissa, synnyttää väistämättä haasteita, jotka voivat hidastaa kehitystä ja heikentää laatua ilman systemaattista lähestymistapaa.
+Nykyaikainen ohjelmistokehitys, erityisesti laajamittaisissa ympäristöissä, kohtaa merkittäviä haasteita. "Project30x" -hankkeen konteksti – noin 30 projektia, jotka kattavat pieniä työkaluja, SaaS-alustoja ja enterprise-tason järjestelmiä ja jotka on toteutettu eri teknologiapinoilla yhdessä monorepossa – on tästä erinomainen esimerkki. Tällainen ympäristö, vaikka se tarjoaa etuja koodin jakamisessa ja yhtenäisissä työkaluissa, synnyttää väistämättä haasteita, jotka voivat hidastaa kehitystä ja heikentää laatua ilman systemaattista lähestymistapaa.
 
 Keskeisimpiä haasteita ovat:
 
@@ -20,7 +20,7 @@ On olennaista ymmärtää, että dokumentaation laatu ei ole pelkästään tekni
 
 1.2 Docusaurus Strategisena Valintana: Enemmän Kuin Staattinen Sivugeneraattori
 
-Docusaurus-alustan valinta "Softa 2025" -hankkeen perustaksi ei ole sattumaa. Se on strateginen päätös, joka perustuu sen kykyyn toimia modernina Jamstack-tietämyskeskuksena, ei pelkästään staattisten sivujen generaattorina. Docusaurus tarjoaa joukon ominaisuuksia, jotka vastaavat suoraan monorepo-ympäristön asettamiin vaatimuksiin.   
+Docusaurus-alustan valinta "Project30x" -hankkeen perustaksi ei ole sattumaa. Se on strateginen päätös, joka perustuu sen kykyyn toimia modernina Jamstack-tietämyskeskuksena, ei pelkästään staattisten sivujen generaattorina. Docusaurus tarjoaa joukon ominaisuuksia, jotka vastaavat suoraan monorepo-ympäristön asettamiin vaatimuksiin.   
 
 "Docs-as-Code" -filosofia: Tämä on koko arkkitehtuurin kulmakivi. Dokumentaatiota käsitellään kuten mitä tahansa muuta koodia: se sijaitsee samassa monorepossa, sitä versioidaan Gitillä, se tarkistetaan osana pull request -prosessia ja se julkaistaan automaattisesti samojen CI/CD-putkien kautta. Tämä kehittäjäkeskeinen lähestymistapa sitouttaa kehittäjät dokumentaation ylläpitoon ja varmistaa, että se pysyy ajan tasalla koodimuutosten kanssa. Tämä ei ole pelkästään tekninen valinta, vaan se on kulttuurinen muutos, joka integroi dokumentoinnin osaksi ydin-kehitysprosessia. Kun dokumentaation päivittäminen on osa "definition of done" -määritelmää, se ei jää enää jälkikäteen tehtäväksi velvollisuudeksi.   
 
@@ -41,27 +41,29 @@ Tämä osio esittelee yksityiskohtaisen suunnitelman sivuston rakenteesta, mää
 
 Ehdotettu hakemistorakenne on suunniteltu selkeyttä ja vastuualueiden erottelua varten. Sijoittamalla Docusaurus-sivuston (docs-website) omaan kansioonsa monorepon juurelle varmistamme, että dokumentaatio on loogisesti erillään, mutta silti tiiviisti kytköksissä projektien lähdekoodiin. Tämä on Docusauruksen suosittelema parhaiden käytäntöjen mukainen rakenne monorepo-ympäristöissä. Selkeä rakenne helpottaa uusien kehittäjien perehtymistä ja tekee sisällön lisäämisestä ja löytämisestä intuitiivista.   
 
-Ehdotettu hakemistorakenne:
+Nykyinen hakemistorakenne:
 
-monorepo-root/
-├── packages/               # Sisältää 30 projektin lähdekoodit
-└── docs-website/           # Docusaurus-sivuston juurihakemisto
-    ├── docusaurus.config.js
-    ├── sidebars.js
-    ├── docs/
-    │   ├── golden-path/
-    │   ├── projects/
-    │   │   ├── small/
-    │   │   ├── saas/
-    │   │   └── enterprise/
-    │   ├── platform/
-    │   ├── architecture/
-    │   │   └── adr/
-    │   └── research/
-    ├── blog/
-    ├── src/
-    └── static/
-Tämä rakenne luo selkeät rajat eri sisältötyyppien välille, mikä on perusta tehokkaalle hallinnalle ja navigoinnille.
+project30x/
+├── apps/                    # Tyhjät toteutuskansiot jokaiselle 30 projektille
+├── docs-website/            # Docusaurus-sivuston juurihakemisto
+│   ├── docusaurus.config.js
+│   ├── sidebars.js
+│   ├── docs/
+│   │   ├── golden-path/
+│   │   ├── projects/
+│   │   │   ├── overview.md
+│   │   │   ├── consensus.md
+│   │   │   └── <projektin-slug>/index.md
+│   │   ├── platform/
+│   │   ├── architecture/
+│   │   │   └── adr/
+│   │   └── research/
+│   ├── blog/
+│   ├── src/
+│   └── static/
+├── description.md           # Ohjelman kuvaus koottuna yhteen tiedostoon
+└── README.md                # Repoa kuvaava yhteenveto
+Rakenteessa projektikohtaiset dokumentit on tasattu suoraan `docs/projects/<slug>/`-hakemistoon, jolloin yhteys `apps/<slug>/`-kansioon voidaan pitää yllä frontmatter-metatiedon (`source_dir`) ja tarvittaessa symbolisten linkkien avulla.
 
 2.2 Docs vs. Blog -dikotomia: Kriittinen Arkkitehtoninen Päätös
 
@@ -73,7 +75,7 @@ Tarkoitus: docs-osio on tarkoitettu perustavanlaatuiselle, "ikivihreälle" tai a
 
 Rakenne: Sisältö on luonteeltaan hierarkkista, ei-kronologista, ja sitä selataan pääasiassa sivupalkin (sidebar) kautta. Täällä olevan tiedon oletetaan olevan aina ajantasainen kuvaus nykytilasta.   
 
-Käyttökohteet "Softa 2025" -hankkeessa:
+Käyttökohteet "Project30x" -hankkeessa:
 
 Golden Path: Ydinarkkitehtuurin periaatteet, koodausstandardit, pull request -käytännöt ja muut yleiset ohjeet, jotka koskevat kaikkia kehittäjiä.
 
@@ -90,7 +92,7 @@ blog-laajennuksen ominaisuudet ja käyttötarkoitus:
 Tarkoitus: blog-osio on tarkoitettu ajalliselle, narratiiviselle tai tapahtumapohjaiselle sisällölle. Se on projektin ja tiimien päiväkirja.
 
 Rakenne: Sisältö on kronologista, järjestettynä päivämäärän mukaan. Se tukee ominaisuuksia kuten avainsanoja (tags) ja kirjoittajatietoja (authors), jotka ovat tyypillisiä aikajanalle sijoittuvalle sisällölle.   
-Käyttökohteet "Softa 2025" -hankkeessa:
+Käyttökohteet "Project30x" -hankkeessa:
 
 Weekly Reports: Viikkoraportit, jotka noudattavat hankkeen aikataulua. Jokainen raportti on päivätty blogikirjoitus, joka voidaan merkitä avainsanoilla (esim. projekti, tiimi).
 
@@ -143,60 +145,24 @@ Yksi ainoa, automaattisesti generoitu sivupalkki kaikille 30 projektille sekä a
 
 Ehdotettu sivupalkkiarkkitehtuuri:
 
-Globaali Sivupalkki (globalSidebar): Tämä sivupalkki on näkyvissä yleisillä, kaikkia projekteja koskevilla sivuilla. Se sisältää linkit keskeisiin, horisontaalisiin kokonaisuuksiin.
+Globaali Sivupalkki (`globalSidebar`): Näkyvissä ohjelman yhteisillä sivuilla (Golden Path, Platform, Architecture, Research) ja keskittyy horisontaalisiin teemoihin.
 
-Golden Path
+Projektisivupalkki (`projectsSidebar`): Automaattisesti generoitava navigaatio, joka kattaa kaikki `docs/projects/<slug>/`-dokumentit. Projektien frontmatterissä oleva `displayed_sidebar: projectsSidebar` ja `source_dir: apps/<slug>` varmistavat, että dokumentaatio ja toteutuskansio pysyvät linkitettyinä ilman välikategoriahakemistoja.
 
-Platform (CI/CD, Infrastructure, Observability, Security)
-
-Architecture (ADRs)
-
-Research
-
-Projektikohtaiset Sivupalkit: Luomme erilliset sivupalkit kullekin projektikategorialle. Tämä rajaa näkymän vain kyseisen kategorian kannalta relevanttiin sisältöön.
-
-smallProjectsSidebar: Kaikille dokumenteille hakemistossa docs/projects/small/.
-
-saasProjectsSidebar: Kaikille dokumenteille hakemistossa docs/projects/saas/.
-
-enterpriseProjectsSidebar: Kaikille dokumenteille hakemistossa docs/projects/enterprise/.
-
-Toteutus:
-Käytämme displayed_sidebar-avainta Markdown-tiedostojen frontmatter-osiossa yhdistääksemme jokaisen dokumentin oikeaan sivupalkkiin. Esimerkiksi jokaisessa    
-
-docs/projects/saas/-hakemiston alla olevassa dokumentissa on metatieto displayed_sidebar: saasProjectsSidebar. Tämä varmistaa, että kun käyttäjä selaa SaaS-projektin dokumentaatiota, hän näkee ainoastaan muiden SaaS-projektien ja niihin liittyvien dokumenttien navigaation. Tämä tarjoaa olennaista kontekstia, vähentää häiriötekijöitä ja tekee navigaatiosta huomattavasti tehokkaampaa.
-
-Tämä lähestymistapa muokkaa suoraan kehittäjien käyttäytymistä ja tiedonhakumalleja. Kontekstitietoinen navigaatiojärjestelmä kannustaa syvälliseen tutustumiseen tietyn osa-alueen sisällä. Esimerkiksi SaaS-projektin parissa työskentelevä kehittäjä voi helposti tutkia muiden vastaavien projektien ratkaisuja ja API-kuvauksia, mikä edistää parhaiden käytäntöjen leviämistä ja yhtenäistää toteutustapoja.
+Tämä malli tarjoaa kontekstisidonnaisen navigaation samalla, kun se pitää yllä suoraviivaista hakemistorakennetta, jota voidaan helposti laajentaa esimerkiksi symbolisilla linkeillä toteutuskoodiin.
 
 3.2 Yläpalkki ja Päänavigaatio
 
 Sivuston yläpalkki (navbar) toimii ensisijaisena sisäänkäyntipisteenä sivuston pääosioihin. Sen tulee olla selkeä ja tarjota nopea pääsy tärkeimpiin sisältökokonaisuuksiin.   
 
-Ehdotetut yläpalkin elementit:
+Nykyinen yläpalkki heijastaa tätä rakennetta seuraavasti:
 
-Docs (Pudotusvalikko):
+- **Guides** – linkittyy `globalSidebar`-sivuihin (Golden Path, Platform, Architecture, Research).
+- **Projects** – ohjaa `projectsSidebar`-navigaatioon, joka listaa kaikki yksittäiset projektit ja konsensus-/overview-sivut.
+- **Blog** – tarjoaa kronologisen näkymän raportteihin ja retropostauksiin.
+- **GitHub** – suora linkki repositorion pääsivulle (`taituo/project30x`).
 
-Golden Path
-
-Platform
-
-Architecture
-
-Projects (Pudotusvalikko):
-
-Small Projects
-
-SaaS Projects
-
-Enterprise Projects
-
-Blog (Suora linkki): Raportit, retrospektiivit ja virstanpylväät.
-
-Research (Suora linkki)
-
-GitHub (Linkki monorepoon)
-
-Tämä rakenne antaa käyttäjälle välittömän yleiskuvan sivuston sisällöstä ja ohjaa hänet oikeaan osioon yhdellä klikkauksella.
+Tämän kevyen navigaation etuna on, että se korostaa kahta pääsisääntuloa (ohjaavat oppaat ja projektit) samalla, kun se jättää tilaa laajentaa valikkoja esimerkiksi myöhempiin tuotantoon liittyviin integraatioihin.
 
 3.3 Löydettävyyden Parantaminen: Haku, Avainsanat ja Metadata
 
@@ -242,7 +208,7 @@ Viikkoraportit: Nimetty henkilö (esim. tiiminvetäjä) vastaa uuden blogikirjoi
 Virstanpylväiden Katsaukset: Jokaisen virstanpylväsjakson päätteeksi luodaan kattava blogikirjoitus. Se tiivistää saavutukset, haasteet ja seuraavat askeleet, ja linkittää relevantteihin viikkoraportteihin ja projektidokumentaatioon.
 
 Retrospektiivit: Sprintin tai projektin jälkeiset retrospektiivit dokumentoidaan blogikirjoituksina. Ne tallentavat keskeiset opit, onnistumiset ja parannuskohteet. authors-metatietoa käytetään liittämään kirjoitus osallistuneeseen tiimiin.   
-Tämä prosessi luo haettavan, kronologisen historian koko "Softa 2025" -hankkeesta. Se tekee edistymisen seurannasta helppoa ja auttaa ymmärtämään projektin evoluutiota ajan myötä. Se ei ole pelkästään raportointia, vaan se on kollektiivisen muistin rakentamista.
+Tämä prosessi luo haettavan, kronologisen historian koko "Project30x" -hankkeesta. Se tekee edistymisen seurannasta helppoa ja auttaa ymmärtämään projektin evoluutiota ajan myötä. Se ei ole pelkästään raportointia, vaan se on kollektiivisen muistin rakentamista.
 
 Integroimalla raportointi ja ADR:t Git-pohjaiseen työnkulkuun muutamme hallintamallin byrokraattisesta prosessista läpinäkyväksi, auditoitavaksi ja kehittäjäystävälliseksi toiminnaksi. Tämä lähestymistapa lisää luottamusta prosesseihin, koska historia on avoin eikä sitä voi helposti muuttaa. Se demokratisoi tiedon saantia, mahdollistaen kenelle tahansa kehittäjälle ominaisuuden jäljittämisen sen alkuperäiseen ADR-päätökseen ja sen edistymisen seuraamisen viikkoraporttien kautta. Tämä edistää korkean luottamuksen ja vastuullisuuden insinöörikulttuuria.
 
@@ -311,7 +277,7 @@ Täysin automatisoitu CI/CD-putki on koko "docs-as-code" -strategian selkäranka
 Tämä helppokäyttöisyys on voimakas psykologinen ajuri. Se edistää pienten, inkrementaalisten päivitysten kulttuuria, mikä on avain dokumentaation pitämiseen tarkkana ja ajantasaisena. Tämä luo itseään vahvistavan kehän: koska dokumentaatiota on helppo päivittää, useammat ihmiset päivittävät sitä. Koska sitä päivitetään usein, se on luotettavampaa. Koska se on luotettavaa, useammat ihmiset käyttävät sitä ja osallistuvat sen kehittämiseen. CI/CD-putki ei siis ole vain tekninen toteutusyksityiskohta; se on dokumentaatiokulttuurin moottori.
 
 Johtopäätökset ja Suositukset
-Tämä strateginen suunnitelma esittää kattavan arkkitehtuurin "Softa 2025" -hankkeen yhtenäiselle tietämyskeskukselle. Hyödyntämällä Docusaurus-alustaa ja "docs-as-code" -filosofiaa, voimme rakentaa järjestelmän, joka ei ainoastaan ratkaise monimutkaisen monorepo-ympäristön haasteita, vaan myös muuttaa dokumentaation strategiseksi voimavaraksi, joka edistää laatua, tuottavuutta ja yhtenäistä insinöörikulttuuria.
+Tämä strateginen suunnitelma esittää kattavan arkkitehtuurin "Project30x" -hankkeen yhtenäiselle tietämyskeskukselle. Hyödyntämällä Docusaurus-alustaa ja "docs-as-code" -filosofiaa, voimme rakentaa järjestelmän, joka ei ainoastaan ratkaise monimutkaisen monorepo-ympäristön haasteita, vaan myös muuttaa dokumentaation strategiseksi voimavaraksi, joka edistää laatua, tuottavuutta ja yhtenäistä insinöörikulttuuria.
 
 Keskeiset suositukset ovat:
 
@@ -325,4 +291,4 @@ Prosessien Integrointi: ADR-työnkulkujen, raportoinnin ja retrospektiivien inte
 
 Täysi Automaatio: CI/CD-putken rakentaminen on ensimmäinen ja tärkein tekninen tehtävä. Se poistaa kitkan ja toimii moottorina, joka pitää tietämyskeskuksen elävänä ja relevanttina.
 
-Noudattamalla tätä suunnitelmaa "Softa 2025" -hanke voi luoda paitsi maailmanluokan dokumentaatioalustan, myös kestävän tiedonhallinnan ekosysteemin, joka skaalautuu tulevaisuuden haasteisiin ja tukee organisaation kasvua ja innovaatiota.
+Noudattamalla tätä suunnitelmaa "Project30x" -hanke voi luoda paitsi maailmanluokan dokumentaatioalustan, myös kestävän tiedonhallinnan ekosysteemin, joka skaalautuu tulevaisuuden haasteisiin ja tukee organisaation kasvua ja innovaatiota.
